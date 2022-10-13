@@ -1,14 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Level</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
     <h1>Level Transducer</h1>
-    <button onclick="location.href='Home.html'" >HOME</button>
-    
-</body>
+    <div class="container">
+      <p class="LT0"></p>
+      <p class="LT1"></p>
+      <p class="LT2"></p>
+    </div>
+    <button onclick="location.href='Home.html'">HOME</button>
+    <style>
+      button {                    /*ตกแต่งปุ่ม HOME หน้า Level */
+        background-color: blue;
+        padding: 20px;
+        width: 110PX;
+        border-radius: 200px;
+        box-shadow:  5px 5px;
+        margin-left: 895px;
+        font-family: 'Silkscreen', cursive;
+        font-size: 20px;;
+        cursor: pointer;
+        color: white;; 
+      }
+      body{                     /*ตกแต่งพื้นหลังและฟร้อนตัวอักษรของหน้า Level */
+        font-size: 30px;
+        background-image: url('Galaxy.svg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: 'Silkscreen', cursive;
+      }
+      h1{                       /*ปรับขนาดและสีของตัวอักษรหัวข้อใหญ่ของหน้า Level */
+        font-size: 70px;
+        text-align: center;
+      }
+      .container{                /*จัดลักษณะการแสดงข้อมูลให้อยู่ในรูปแบบแนวนอน */
+        display: flex;
+        justify-content: center;;
+        align-items: center;
+        gap: 20px;
+      }
+    </style>
+    <script>           /*ดึงข้อมูลจาก https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=Level-transducer มาแสดงบนเว็บไซต์เรา*/
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch(
+          "https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=level-transducer"
+        )
+          .then((response) => response.json())
+          .then((dataL) => {
+            document.querySelector(
+              ".LT0"
+            ).innerHTML = `name: ${dataL[0].name}<br>
+                                                              type: ${dataL[0].type}<br>
+                                                              unit: ${dataL[0].unit}<br>
+                                                              rang: ${dataL[0].range[0]} - ${dataL[0].range[1]}<br>
+                                                              plant-site: ${dataL[0]["plant-site"]}<br>
+                                                              value: ${dataL[0].value}<br>`;
+            document.querySelector(
+              ".LT1"
+            ).innerHTML = `name: ${dataL[1].name}<br>
+                                                              type: ${dataL[1].type}<br>
+                                                              unit: ${dataL[1].unit}<br>
+                                                              rang: ${dataL[1].range[0]} - ${dataL[1].range[1]}<br>
+                                                              plant-site: ${dataL[1]["plant-site"]}<br>
+                                                              value: ${dataL[1].value}<br>`;
+            document.querySelector(
+              ".LT2"
+            ).innerHTML = `name: ${dataL[2].name}<br>
+                                                              type: ${dataL[2].type}<br>
+                                                              unit: ${dataL[2].unit}<br>
+                                                              rang: ${dataL[2].range[0]} - ${dataL[2].range[1]}<br>
+                                                              plant-site: ${dataL[2]["plant-site"]}<br>
+                                                              value: ${dataL[2].value}<br>`;
+          });
+      });
+    </script>
+  </body>
 </html>

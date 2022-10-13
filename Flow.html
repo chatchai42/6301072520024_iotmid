@@ -5,38 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FLOW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"/>
   </head>
-  <body>
+
+  <body> 
     <h1>Flow Transducer</h1>
+    <div class="container">
+      <p class="FT0"></p>
+      <p class="FT1"></p>
+      <p class="FT2"></p>
+    </div>
     <button onclick="location.href='Home.html'">HOME</button>
-    <p class="name0"></p>
-    <p class="type0"></p>
-    <p class="unit0"></p>
-    <p class="rang0"></p>
-    <p class="plant-site0"></p>
-    <p class="value0"></p>
+    <style>
+      button {                    /*ตกแต่งปุ่ม HOME หน้า FLOW */  
+        background-color: blue;
+        padding: 20px;
+        width: 110px;
+        border-radius: 200px;
+        box-shadow: 5px 5px;
+        margin-left: 895px;
+        font-family: 'Silkscreen', cursive;
+        font-size: 20px;;
+        cursor: pointer;
+        color: white;;
+      }
+      body {                    /*ตกแต่งพื้นหลังและฟร้อนตัวอักษรของหน้า FLOW */
+        font-size: 30px;
+        background-image: url("Galaxy.svg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;;
+        font-family: 'Silkscreen', cursive;
+      }
+      h1{                       /*ปรับขนาดและสีของตัวอักษรหัวข้อใหญ่ของหน้า FLOW */
+        font-size: 70px;
+        text-align: center;
+      }
+      .container{               /*จัดลักษณะการแสดงข้อมูลให้อยู่ในรูปแบบแนวนอน */
+        display: flex;
+        justify-content: center;;
+        align-items: center;
+        gap: 20px;
+      }
+    </style>
 
-    <p class="name1"></p>
-    <p class="type1"></p>
-    <p class="unit1"></p>   
-    <p class="rang1"></p>
-    <p class="plant-site1"></p>
-    <p class="value1"></p>
-
-    <p class="name2"></p>
-    <p class="type2"></p>
-    <p class="unit2"></p>
-    <p class="rang2"></p>
-    <p class="plant-site2"></p>
-    <p class="value2"></p>
-
-  <script>
+    <script>           /*ดึงข้อมูลจาก https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=flow-transducer มาแสดงบนเว็บไซต์เรา*/
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=flow-transducer")
+        fetch(
+          "https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=flow-transducer"
+        )
           .then((response) => response.json())
-          .then((data) => {
-                document.querySelector('.name0').innerHTML = `name: ${data[0].name}<br>`;
-                document.querySelector('.rang0').innerHTML = `${data[0].range[0]} - ${data[0].range[1]}`;
+          .then((dataF) => {
+            document.querySelector(
+              ".FT0"
+            ).innerHTML = ` name: ${dataF[0].name}<br>
+                                                            type: ${dataF[0].type}<br>
+                                                            unit: ${dataF[0].unit}<br>
+                                                            rang: ${dataF[0].range[0]} - ${dataF[0].range[1]}<br>
+                                                            plant-site: ${dataF[0]["plant-site"]}<br>
+                                                            value: ${dataF[0].value}<br>`;
+            document.querySelector(
+              ".FT1"
+            ).innerHTML = `name: ${dataF[1].name}<br>
+                                                            type: ${dataF[1].type}<br>
+                                                            unit: ${dataF[1].unit}<br>
+                                                            rang: ${dataF[1].range[0]} - ${dataF[1].range[1]}<br>
+                                                            plant-site: ${dataF[1]["plant-site"]}<br>
+                                                            value: ${dataF[1].value}<br>`;
+            document.querySelector(
+              ".FT2"
+            ).innerHTML = `name: ${dataF[2].name}<br>
+                                                            type: ${dataF[2].type}<br>
+                                                            unit: ${dataF[2].unit}<br>
+                                                            rang: ${dataF[2].range[0]} - ${dataF[2].range[1]}<br>
+                                                            plant-site: ${dataF[2]["plant-site"]}<br>
+                                                            value: ${dataF[2].value}<br>`;
           });
       });
     </script>
