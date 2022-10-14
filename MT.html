@@ -12,69 +12,90 @@
       rel="stylesheet"
     />
   </head>
-  <body  align=" center">
+  <body align=" center">
     <h1>Send Information</h1>
     <div class="MT">
-      <form 
+      <form
         action="https://midterm-exam-010723313-2022.herokuapp.com/student_post"
-        method="post">
-        <div class=" input">
-        <input type="text" placeholder="id" name="st_id" /><br />
-        <input type="text" placeholder="name" name="st_name" /><br />
-        <input type="text" placeholder="sensor-id" name="sensor_type" /><br />
-        <input type="text" placeholder="sensor-name" name="sensor_name" /><br />
-        <input type="text"placeholder="sensor-value"name="sensor_value" /><br />
-        <input type="text" placeholder="sensor-unit" name="sensor_unit" /><br />
+        method="post"
+      >
+        <div class="input">
+          <input type="text" placeholder="id" name="st_id" /><br />
+          <input type="text" placeholder="name" name="st_name" /><br />
+          <input type="text" placeholder="sensor-id" name="sensor_type" /><br />
+          <input type="text" placeholder="sensor-name" name="sensor_name" /><br />
+          <input type="text" placeholder="sensor-value" name="sensor_value" /><br />
+          <input type="text" placeholder="sensor-unit" name="sensor_unit" /><br />
         </div>
         <input type="submit" value="submit" class="submit" />
       </form>
       <button onclick="location.href='Home.html'">HOME</button>
-      <style> 
-        button {                    /*ตกแต่งปุ่ม HOME หน้า MT */
-          background-color: blue;
+      <style>
+        button {
+          /*ตกแต่งปุ่ม HOME หน้า MT */
+          display: inline-block;
           padding: 15px;
-          width: 110px;
+          font-size: 16px;
+          width: 130px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          background-color: blue;
+          border: none;
           border-radius: 200px;
           box-shadow: 5px 5px;
           margin-left: 0px;
-          margin-top: 20px;
+          margin-top: 30px;
+          color: white;
           font-family: "Silkscreen", cursive;
-          font-size: 16px;
-          cursor: pointer;
-          color: white;;
         }
-        body {             /*ตกแต่งพื้นหลัง ฟร้อนตัวอักษรและระยะห่างของบล็อค Input ของหน้า MT */ 
-          font-size: 35px;
+        button:hover {
+          background-color: orange;
+        }
+        button:active {
+          background-color: #000000;
+          box-shadow: 0 5px rgb(0, 0, 0);
+          transform: translateY(4px);
+        }
+        body {
+          /*ตกแต่งพื้นหลัง ฟร้อนตัวอักษรและระยะห่างของบล็อค Input ของหน้า MT */
+          font-size: 50px;
           background-image: url("Galaxy.svg");
           background-repeat: no-repeat;
           background-attachment: fixed;
           color: white;
           font-family: "Silkscreen", cursive;
         }
-        h1 {                    /*ปรับขนาดและตำแหน่งของตัวอักษรหัวข้อใหญ่ของหน้า MT */
+        h1 {
+          /*ปรับขนาดและตำแหน่งของตัวอักษรหัวข้อใหญ่ของหน้า MT */
           font-size: 70px;
           text-align: center;
-        } 
+        }
         .MT {
           margin: auto;
         }
-        .submit {                   /*ตกแต่งปุ่ม SUBMIT หน้า MT */
+        .submit {
+          /*ตกแต่งปุ่ม SUBMIT หน้า MT */
           background-color: orange;
           padding: 15px;
-          width: 110px;
+          width: 130px;
           border-radius: 200px;
           box-shadow: 5px 5px;
           margin-left: 0px;
-          margin-top: 20px;
+          margin-top: 30px;
           font-family: "Silkscreen", cursive;
           font-size: 16px;
           cursor: pointer;
-          color: white;;
+          color: white;
+          
         }
-        input {                /*ตกแต่งบล็อต Input หน้า MT */
-           
-            border-radius: 50px;
-            box-shadow: 5px 5px;
+        input {
+          /*ตกแต่งบล็อต Input หน้า MT */
+          border-radius: 50px;
+          box-shadow: 5px 5px;
+          font-size: 20px;
+          font-family: "Silkscreen", cursive;
         }
       </style>
     </div>

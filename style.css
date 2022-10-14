@@ -1,25 +1,59 @@
-button{         /*ปรับแต่งปุ่มหน้าโฮม*/
-    background-color: yellow;;
-    padding: 20px 20px;
-    border-radius: 100%;
-    margin: 20px;
-    font-size: 16px;
-    width: 150px;
-    height: 150px;
-    box-shadow: -10px -10px;
-    font-family: 'Silkscreen', cursive;
-    cursor: pointer;
-    
+button {
+  /*ปรับแต่งปุ่มหน้าโฮม*/
+  display: inline-block;
+  padding: 20px 20px;
+  font-size: 16px;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background-color: #eaff00;
+  border: none;
+  border-radius: 100%;
+  box-shadow: -10px -10px rgb(10, 10, 10);
+  font-family: "Silkscreen", cursive;
+}
+button:hover {
+  background-color: #ffae00;
 }
 
-body{      /*ตกแต่งพื้นหลังและฟร้อนตัวอักษร*/
-    background-image: url('Galaxy.svg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Silkscreen', cursive;
+button:active {
+  background-color: #ffa600;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+body {
+  /*ตกแต่งพื้นหลังและฟร้อนตัวอักษร*/
+  background-image: url("Galaxy.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Silkscreen", cursive;
 }
 
-h1{   /*ปรับขนาดและสีของตัวอักษรหัวข้อใหญ่*/
-    font-size: 70px;
-    color: white;;
+h1 {
+  /*ปรับขนาดและสีของตัวอักษรหัวข้อใหญ่*/
+  top:1%;
+  left: 20%;
+  text-align: center;
+  background: linear-gradient(90deg,#ffffff,#8cd2d0,#ffd500, #ffaa00, #a3818c, #020202);
+  background-size: 400%;
+  font-size: 70px;
+  letter-spacing: 5px;
+  font-weight: 600;
+  word-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate 7s linear infinite;
+}
+@keyframes animate {
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:200%;
+}
 }

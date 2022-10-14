@@ -20,17 +20,32 @@
     </div>
     <button onclick="location.href='Home.html'">HOME</button>
     <style>
-      button {                    /*ตกแต่งปุ่ม HOME หน้า Level */
-        background-color: blue;
+      button {                    
+        /*ตกแต่งปุ่ม HOME หน้า Level */
+        display: inline-block;
         padding: 20px;
-        width: 110PX;
-        border-radius: 200px;
-        box-shadow:  5px 5px;
-        margin-left: 895px;
-        font-family: 'Silkscreen', cursive;
-        font-size: 20px;;
+        font-size: 20px;
+        width: 110px;
         cursor: pointer;
-        color: white;; 
+        text-align: center;
+        text-decoration: none;
+        outline: none; 
+        background-color: blue;
+        border: none;
+        border-radius: 200px;
+        box-shadow: 5px 5px;
+        margin-left: 895px;
+        margin-top: 80px;
+        color: white;
+        font-family: "Silkscreen", cursive;
+      }
+      button:hover {
+        background-color: orange;
+      }
+      button:active {
+        background-color: #000000;
+        box-shadow: 0 5px rgb(0, 0, 0);
+        transform: translateY(4px);
       }
       body{                     /*ตกแต่งพื้นหลังและฟร้อนตัวอักษรของหน้า Level */
         font-size: 30px;
